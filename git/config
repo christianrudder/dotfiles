@@ -35,7 +35,7 @@
   status = auto
 
 [core]
-  editor = mate -w
+  editor = subl -w
 	excludesfile = /Users/adam/.gitignore_global
 
 [push]

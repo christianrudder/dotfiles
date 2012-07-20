@@ -13,5 +13,10 @@ if [ -f $HOME/src/django-trunk/extras/django_bash_completion ]; then
   . "$HOME/src/django-trunk/extras/django_bash_completion"
 fi
 
+# z script
+if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
+  . `brew --prefix`/etc/profile.d/z.sh
+fi
+
 # source RVM, should always be last
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
