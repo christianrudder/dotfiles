@@ -18,5 +18,10 @@ if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
   . `brew --prefix`/etc/profile.d/z.sh
 fi
 
+# Node Version Manager
+if [ -f $HOME/nvm/nvm.sh ]; then
+  . $HOME/nvm/nvm.sh
+fi
+
 # source RVM, should always be last
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

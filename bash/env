@@ -8,7 +8,7 @@ export TERM="xterm-color"
 export PGDATA="/usr/local/var/postgres"
 export PYTHON="/usr/local/bin/python"
 export NODE_PATH="/usr/local/lib/node_modules"
-export ANDROID_SDK_ROOT="/usr/local/Cellar/android-sdk/r20"
+export ANDROID_SDK_ROOT="/usr/local/Cellar/android-sdk/r20.0.1"
 
 # Default paths
 # Ensure brew is happy by adding /usr/local/(s)bin

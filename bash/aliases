@@ -28,12 +28,11 @@ alias h=history
 
 alias g=git
 alias s=subl
-alias m=subl
+alias m=mate
 alias m1="/Applications/TextMate.app/Contents/SharedSupport/Support/bin/mate"
 alias m2=mate
 alias v=vim
 alias t=todo.sh
-alias r=rails
 
 alias bi="brew install"
 alias bif="bi --force"
@@ -73,6 +72,8 @@ alias gsp="git stash pop"
 
 alias jas="jasmine-node --color"
 alias mtr="sudo mtr"
+
+alias linode_tunnel="ssh -C -D 8080 linode"
 
 # postgres
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"

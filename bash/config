@@ -13,8 +13,9 @@ else
   COLOR=$WHITE
 fi
 
-# http://jonisalonen.com/2012/your-bash-prompt-needs-this/
-GLUE="\[\033[G\]"
+git_branch () {
+  git name-rev HEAD 2> /dev/null | sed 's#HEAD\ \(.*\)#(\1)#'
+}
 
 # Set the prompt to: "[<user>@<host> <pwd> ] "
-export PS1="$GLUE$BRIGHT_BLACK[$COLOR\u$BRIGHT_BLACK@$COLOR\h $BLUE\w $BRIGHT_BLACK]$RESET "
+export PS1="$BRIGHT_BLACK[$COLOR\u$BRIGHT_BLACK@$COLOR\h $BLUE\w $WHITE\$(git_branch)$BRIGHT_BLACK]$RESET "
