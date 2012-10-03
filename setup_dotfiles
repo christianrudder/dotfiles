@@ -13,6 +13,7 @@ PRY="$HOME/.pryrc"
 RRC="$HOME/.railsrc"
 RVM="$HOME/.rvmrc"
 SCREEN="$HOME/.screenrc"
+TM="$HOME/.tm_properties"
 VIM="$HOME/.vim"
 VRC="$HOME/.vimrc"
 
@@ -29,6 +30,7 @@ function erase_dotfiles {
   rm -f $RRC
   rm -f $RVM
   rm -f $SCREEN
+  rm -f $TM
   rm -f $VIM
   rm -f $VRC
 }
@@ -46,6 +48,7 @@ function create_symlinks {
   ln -s $DIR/railsrc $RRC
   ln -s $DIR/rvmrc $RVM
   ln -s $DIR/screenrc $SCREEN
+  ln -s $DIR/tm_properties $TM
   ln -s $DIR/vim $VIM
   ln -s $DIR/vim/rc $VRC
 }
@@ -61,7 +64,7 @@ if [ -d $DIR ]; then
         create_symlinks
         exit 0
         ;;
-      
+
       No )
         create_symlinks
         exit 0
