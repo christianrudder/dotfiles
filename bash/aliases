@@ -15,6 +15,7 @@ alias words="cat /usr/share/dict/web2 /usr/share/dict/web2a"
 
 # laziness
 alias a="alias"
+alias l="l -F"
 alias ll="ls -lF"
 alias lls="ls -alF"
 alias lr="lls -R"
@@ -25,8 +26,14 @@ alias cdd="cd -"
 alias ..="cd .."
 alias h=history
 
+alias git=hub
+alias g=git
+alias s=subl
 alias m=mate
+alias m1="/Applications/TextMate.app/Contents/SharedSupport/Support/bin/mate"
+alias m2=mate
 alias v=vim
+alias t=todo.sh
 
 alias bi="brew install"
 alias bif="bi --force"
@@ -43,6 +50,7 @@ alias bh="brew home"
 alias ga="git add"
 alias gaa="git add --all"
 alias gb="git branch"
+alias gbl="git blame"
 alias gd="git diff"
 alias gs="git status --ignore-submodules"
 alias gp="git pull"
@@ -50,18 +58,32 @@ alias go="git push"
 alias gm="git commit -m"
 alias gma="git commit -am"
 alias gl="git log --pretty=oneline"
+alias gt="git t"
 alias gw="git whatchanged"
 alias gcl="git clone"
 alias gc="git checkout"
+alias gcm="git checkout master"
+alias gmm="git merge master"
 alias gss="git stash save"
 alias gsa="git stash apply"
+alias gsl="git stash list"
+alias gsd="git stash drop"
+alias gsc="git stash clear"
+alias gsp="git stash pop"
 
 alias jas="jasmine-node --color"
 alias mtr="sudo mtr"
 
+alias linode_tunnel="ssh -C -D 8080 linode"
+
 # postgres
-alias pg_start="pg_ctl -l /usr/local/var/postgres/server.log start"
+alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+
+# mysql
+alias start_mysql="launchctl load -w $HOME/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
+alias stop_mysql="launchctl unload -w $HOME/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
+alias restart_mysql="stop_mysql && start_mysql"
 
 # for Lion, in case I forget it
 alias show_library="chflags nohidden ~/Library/"
@@ -73,11 +95,17 @@ alias ee="v $HOME/.dotfiles/bash/env"
 alias et="v $HOME/.dotfiles/bash/tools"
 alias reload=". $HOME/.bash_profile"
 
-alias yuicompress="java -jar $HOME/bin/yuicompressor-2.4.7pre.jar"
+alias yuicompress="java -jar $HOME/bin/yuicompressor-2.4.8pre.jar"
 alias dnstest="java -jar $HOME/bin/browsermob-dns-perf.jar"
 
 # always color rspec
 alias rspec="rspec -c"
+
+# add Heroku key for Authentic
+add-heroku-key() {
+  ssh-add ~/.ssh/authentic_id_rsa
+  heroku keys:add ~/.ssh/authentic_id_rsa.pub
+}
 
 # mkdir, cd into it
 mkcd() {

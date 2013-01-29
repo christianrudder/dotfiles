@@ -28,3 +28,6 @@
 [submodule "vim/bundle/scala-vim-support"]
 	path = vim/bundle/scala-vim-support
 	url = https://github.com/rosstimson/scala-vim-support.git
+[submodule "bash/external/rails_completion"]
+	path = bash/external/rails_completion
+	url = https://github.com/jweslley/rails_completion.git

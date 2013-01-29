@@ -3,9 +3,24 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
+# rails bash completion
+if [ -f $HOME/.dotfiles/bash/external/rails_completion/rails.bash ]; then
+  . $HOME/.dotfiles/bash/external/rails_completion/rails.bash
+fi
+
 # django bash completion
 if [ -f $HOME/src/django-trunk/extras/django_bash_completion ]; then
-. "$HOME/src/django-trunk/extras/django_bash_completion"
+  . "$HOME/src/django-trunk/extras/django_bash_completion"
+fi
+
+# z script
+if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
+  . `brew --prefix`/etc/profile.d/z.sh
+fi
+
+# Node Version Manager
+if [ -f $HOME/nvm/nvm.sh ]; then
+  . $HOME/nvm/nvm.sh
 fi
 
 # source RVM, should always be last
