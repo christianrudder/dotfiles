@@ -1,5 +1,5 @@
 startup_message off
-escape ^Jj
+#escape ^Jj
 hardstatus on
 hardstatus alwayslastline
 hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %1` %H %{..Y} %m/%d %C%a "
