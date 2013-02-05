@@ -29,6 +29,7 @@ alias h=history
 alias git=hub
 alias g=git
 alias s=subl
+alias s3="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias m=mate
 alias m1="/Applications/TextMate.app/Contents/SharedSupport/Support/bin/mate"
 alias m2=mate
