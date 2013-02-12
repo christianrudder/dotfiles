@@ -11,7 +11,6 @@ GRC="$HOME/.gvimrc"
 IRC="$HOME/.irbrc"
 PRY="$HOME/.pryrc"
 RRC="$HOME/.railsrc"
-RVM="$HOME/.rvmrc"
 SCREEN="$HOME/.screenrc"
 TM="$HOME/.tm_properties"
 VIM="$HOME/.vim"
@@ -28,7 +27,6 @@ function erase_dotfiles {
   rm -f $IRC
   rm -f $PRY
   rm -f $RRC
-  rm -f $RVM
   rm -f $SCREEN
   rm -f $TM
   rm -f $VIM
@@ -46,7 +44,6 @@ function create_symlinks {
   ln -s $DIR/irbrc $IRC
   ln -s $DIR/pryrc $PRY
   ln -s $DIR/railsrc $RRC
-  ln -s $DIR/rvmrc $RVM
   ln -s $DIR/screenrc $SCREEN
   ln -s $DIR/tm_properties $TM
   ln -s $DIR/vim $VIM

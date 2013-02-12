@@ -23,6 +23,3 @@ if [ -f $HOME/nvm/nvm.sh ]; then
   . $HOME/nvm/nvm.sh
   . $HOME/nvm/bash_completion
 fi
-
-# source RVM, should always be last
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

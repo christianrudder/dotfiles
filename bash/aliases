@@ -86,6 +86,9 @@ alias start_mysql="launchctl load -w $HOME/Library/LaunchAgents/homebrew.mxcl.my
 alias stop_mysql="launchctl unload -w $HOME/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
 alias restart_mysql="stop_mysql && start_mysql"
 
+# use live heroku database locally
+alias db_restore="heroku pgbackups:capture --app authenticcrew && curl -o latest.dump `heroku pgbackups:url --app authenticcrew` && pg_restore --verbose --clean --no-acl --no-owner -h localhost -U adam -d authentic_dev latest.dump"
+
 # for Lion, in case I forget it
 alias show_library="chflags nohidden ~/Library/"
 alias hide_library="chflags hidden ~/Library/"
