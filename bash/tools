@@ -18,6 +18,9 @@ if [ -f `brew --prefix`/etc/profile.d/z.sh ]; then
   . `brew --prefix`/etc/profile.d/z.sh
 fi
 
+# rbenv completion
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 # Node Version Manager
 if [ -f $HOME/nvm/nvm.sh ]; then
   . $HOME/nvm/nvm.sh
