@@ -13,5 +13,5 @@ else
   COLOR=$WHITE
 fi
 
-# Set the prompt to: "[<user>@<host> <pwd> (git branch)] "
+# Set the prompt to: "[<user>@<host> <pwd> (<git-branch>)] "
 export PS1="$BRIGHT_BLACK[$COLOR\u$BRIGHT_BLACK@$COLOR\h $BLUE\w $BLACK\$(__git_ps1 | tr -d ' ')$BRIGHT_BLACK]$RESET "
