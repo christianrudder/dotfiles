@@ -15,8 +15,15 @@ export ANDROID_SDK_ROOT="/usr/local/Cellar/android-sdk/r21"
 # before /usr/bin
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 
+# npm bin
+export PATH="/usr/local/share/npm/bin:$PATH"
+
 # Additional brew paths
 export PATH="$PATH:/usr/local/Cellar/python/2.7.1/bin:/usr/local/share/python"
+
+# gnu utils
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # My path
 export PATH="$PATH:$HOME/bin"

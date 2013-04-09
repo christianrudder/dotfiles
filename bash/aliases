@@ -35,8 +35,6 @@ fi
 alias git=hub
 alias g=git
 alias m=mate
-alias m1="/Applications/TextMate.app/Contents/SharedSupport/Support/bin/mate"
-alias m2=mate
 alias v=vim
 alias t=todo.sh
 
@@ -93,6 +91,7 @@ alias restart_mysql="stop_mysql && start_mysql"
 # for Lion, in case I forget it
 alias show_library="chflags nohidden ~/Library/"
 alias hide_library="chflags hidden ~/Library/"
+alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
 
 # edit and reload bash configuration
 alias ea="v $HOME/.dotfiles/bash/aliases"
@@ -118,3 +117,9 @@ mkcd() {
   cd "$*"
 }
 
+# restore db from heroku
+restore_db() {
+  heroku pgbackups:capture --expire --app authenticcrew &&
+  curl -o latest.dump `heroku pgbackups:url --app authenticcrew` &&
+  pg_restore --verbose --clean --no-acl --no-owner -h localhost -U adam -d authentic_dev latest.dump
+}
