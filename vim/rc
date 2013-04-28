@@ -13,6 +13,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'gagoar/StripWhiteSpaces'
 Bundle 'wincent/Command-T'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-surround'
@@ -35,6 +36,8 @@ filetype plugin indent on
 let g:NERDTreeWinPos = 'right'
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
+" close NERDTree when closing last buffer
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " how I prefer my tabs/spaces
 set ts=2 sts=2 sw=2 expandtab
