@@ -1,30 +1,17 @@
-" How I prefer my tabs/spaces
-set ts=2 sts=2 sw=2 expandtab
+set nocompatible
+filetype off
 
-if has('autocmd')
-  
-  " turn filetype off per the pathogen instructions at
-  " http://www.vim.org/scripts/script.php?script_id=2332
-  filetype off
-  
-  call pathogen#runtime_append_all_bundles()
-  
-  " turn filetype back on after calling pathogen
-  filetype on
-  filetype plugin on
-  
-  " set filetypes for a given extension
-  au BufRead,BufNewFile *.R set ft=R
-  au BufRead,BufNewFile *.snippets set ft=snippet
-  
-  " local settings for specific filetypes
-  au FileType make,snippet setlocal ts=8 sts=8 sw=8 noexpandtab
-  au FileType python setlocal ts=4 sts=4 sw=4
-  
-  " compile coffeescripts on save
-  au BufWritePost,FileWritePost *.coffee :silent !coffee -c %
-  
-endif
+" use Vundle
+set rtp+=~/dotfiles/vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+filetype plugin indent on
+
+" how I prefer my tabs/spaces
+set ts=2 sts=2 sw=2 expandtab
 
 " set the leader key to the comma
 let mapleader=','
@@ -83,7 +70,7 @@ set backspace=indent,eol,start " backspace over everything
 " mimic TextMate's invisible characters
 set listchars=tab:▸\ ,eol:¬
 
-" show current file (filetype) on the left and 
+" show current file (filetype) on the left and
 " [cursor position line,colum] [number of lines] on the right
 set statusline=%F%m%r%h%w\ (%{&ft})\ %=[%l,%v]\ [%L\ lines]
 
@@ -92,4 +79,4 @@ set laststatus=2
 
 syntax enable
 
-colorscheme ir_black
+" colorscheme ir_black
