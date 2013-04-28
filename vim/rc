@@ -2,13 +2,39 @@ set nocompatible
 filetype off
 
 " use Vundle
-set rtp+=~/dotfiles/vim/bundle/vundle/
+set rtp+=~/.dotfiles/vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
+" bundles
+Bundle 'scrooloose/nerdtree'
+Bundle 'gagoar/StripWhiteSpaces'
+Bundle 'wincent/Command-T'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-surround'
+
+" FuzzyFinder dependencies
+Bundle 'L9'
+" FuzzyFinder
+Bundle 'FuzzyFinder'
+
+" snipmate dependencies
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'honza/vim-snippets'
+" snipmate
+Bundle 'garbas/vim-snipmate'
+
 filetype plugin indent on
+
+" set up NERDTree
+let g:NERDTreeWinPos = 'right'
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
 
 " how I prefer my tabs/spaces
 set ts=2 sts=2 sw=2 expandtab
@@ -18,9 +44,6 @@ let mapleader=','
 
 " source custom functions
 so ~/.dotfiles/vim/functions
-
-" map ,w to StripTrailingWhitespaces()
-nnoremap <silent> <leader>w :call StripTrailingWhitespaces()<cr>
 
 " toggle invisibles with ,i
 nmap <leader>i :set list!<cr>
@@ -34,8 +57,8 @@ nmap <leader>s :set spell!<cr>
 " toggle previous buffer with ,,
 nmap <leader><leader> <c-^>
 
-" clear search highlighting
-nmap <ret> :nohlsearch<cr>
+" clear search highlighting with ctrl+l
+nmap <C-l> :nohlsearch<cr>
 
 " open files in the same directory as the current file
 cnoremap %% <c-r>=expand('%:h').'/'<cr>
