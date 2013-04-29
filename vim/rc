@@ -17,11 +17,7 @@ Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-surround'
-
-" FuzzyFinder dependencies
-Bundle 'L9'
-" FuzzyFinder
-Bundle 'FuzzyFinder'
+Bundle 'scrooloose/syntastic'
 
 " snipmate dependencies
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -38,6 +34,11 @@ autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 " close NERDTree when closing last buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" set up vim-rspec
+map <Leader>1 :call RunCurrentSpecFile()<CR>
+map <Leader>2 :call RunNearestSpec()<CR>
+map <Leader>3 :call RunLastSpec()<CR>
 
 " how I prefer my tabs/spaces
 set ts=2 sts=2 sw=2 expandtab
@@ -58,7 +59,7 @@ nmap <leader>c :set cursorline!<cr>
 nmap <leader>s :set spell!<cr>
 
 " toggle previous buffer with ,,
-nmap <leader><leader> <c-^>
+" nmap <leader><leader> <c-^>
 
 " clear search highlighting with ctrl+l
 nmap <C-l> :nohlsearch<cr>
@@ -105,4 +106,4 @@ set laststatus=2
 
 syntax enable
 
-" colorscheme ir_black
+colorscheme ir_black
