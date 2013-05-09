@@ -9,7 +9,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " bundles
-Bundle 'scrooloose/nerdtree'
+" Bundle 'scrooloose/nerdtree'
 Bundle 'gagoar/StripWhiteSpaces'
 Bundle 'wincent/Command-T'
 Bundle 'Lokaltog/vim-easymotion'
@@ -28,12 +28,7 @@ Bundle 'garbas/vim-snipmate'
 
 filetype plugin indent on
 
-" set up NERDTree
-let g:NERDTreeWinPos = 'right'
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
-" close NERDTree when closing last buffer
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+colorscheme ir_black
 
 " set up vim-rspec
 map <Leader>1 :call RunCurrentSpecFile()<CR>
@@ -69,6 +64,9 @@ cnoremap %% <c-r>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
 
+" auto bracket insertion
+inoremap { {<CR><BS>}<Esc>ko
+
 " a visual reminder of an 80-character line
 if exists('+colorcolumn')
   set colorcolumn=80
@@ -93,17 +91,22 @@ set ignorecase
 set smartcase
 set scrolloff=5
 set backspace=indent,eol,start " backspace over everything
+set backupdir=~/tmp
 
 " mimic TextMate's invisible characters
 set listchars=tab:▸\ ,eol:¬
 
-" show current file (filetype) on the left and
-" [cursor position line,colum] [number of lines] on the right
-set statusline=%F%m%r%h%w\ (%{&ft})\ %=[%l,%v]\ [%L\ lines]
+if has("gui_macvim")
+  " user Powerline
+  set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
+  set noshowmode
+else
+  " show current file (filetype) on the left and
+  " [cursor position line,colum] [number of lines] on the right
+  set statusline=%F%m%r%h%w\ (%{&ft})\ %=[%l,%v]\ [%L\ lines]
+endif
 
 " show the status line
 set laststatus=2
 
 syntax enable
-
-colorscheme ir_black

@@ -36,7 +36,7 @@
 
 [core]
   editor = subl -w
-  excludesfile = /Users/adam/.gitignore_global
+  excludesfile = /Volumes/home/adam/.gitignore
 
 [push]
   default = current

@@ -75,6 +75,8 @@ alias gsd="git stash drop"
 alias gsc="git stash clear"
 alias gsp="git stash pop"
 
+alias rcs="rails c --sandbox"
+
 alias jas="jasmine-node --color"
 alias mtr="sudo mtr"
 
@@ -105,6 +107,17 @@ alias dnstest="java -jar $HOME/bin/browsermob-dns-perf.jar"
 
 # always color rspec
 alias rspec="rspec -c"
+
+# set up rails dev server
+pow() {
+  if [ $1 ]; then
+    P="$1"
+  else
+    P="`pwd`"
+  fi
+
+  ln -s "$P" "$HOME/.pow/${P##*/}"
+}
 
 # add Heroku key for Authentic
 add-heroku-key() {

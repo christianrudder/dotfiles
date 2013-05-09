@@ -7,6 +7,7 @@ export TERM="xterm-color"
 
 export PGDATA="/usr/local/var/postgres"
 export PYTHON="/usr/local/bin/python"
+export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
 export NODE_PATH="/usr/local/lib/node_modules"
 export ANDROID_SDK_ROOT="/usr/local/Cellar/android-sdk/r21.1"
 export RBENV_ROOT="/usr/local/var/rbenv"

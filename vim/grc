@@ -2,6 +2,17 @@ so ~/.dotfiles/vim/rc
 
 set spell
 set cursorline
-set guifont=Menlo-Regular:h16
+set guifont=PragmataPro:h18
 set guioptions-=T
 set guioptions-=r
+
+" slow down cursor blink
+set guicursor=a:blinkon1000-blinkoff1000
+
+noremap <D-r> :CommandTFlush<CR>
+"inoremap <D-CR> :call InsertAndGoToNewLine()<CR>
+
+if has("gui_macvim")
+  macmenu &File.New\ Tab key=<nop>
+  map <D-t> :call OpenNewTabAndCommandT()<CR>
+endif
