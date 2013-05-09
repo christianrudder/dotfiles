@@ -92,11 +92,12 @@ set smartcase
 set scrolloff=5
 set backspace=indent,eol,start " backspace over everything
 set backupdir=~/tmp
+set t_Co=256
 
 " mimic TextMate's invisible characters
 set listchars=tab:▸\ ,eol:¬
 
-if has("gui_macvim")
+if isdirectory('/usr/local/lib/python2.7/site-packages/powerline')
   " user Powerline
   set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
   set noshowmode
