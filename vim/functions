@@ -18,3 +18,17 @@ fu! StripTrailingWhitespaces()
   call cursor(l, c)
 endf
 
+fu! WrapSelection()
+  let tag = input('Tag: ')
+  if len(tag) > 0
+    normal `>
+    if &selection == 'exclusive'
+      exe 'normal i</'.tag.'>'
+    else
+      exe 'normal a</'.tag.'>'
+    endif
+    normal `<
+    exe 'normal i<'.tag.'>'
+    normal `<
+  endif
+endf

@@ -38,6 +38,9 @@ map <Leader>3 :call RunLastSpec()<CR>
 " how I prefer my tabs/spaces
 set ts=2 sts=2 sw=2 expandtab
 
+" use Smarty
+au BufRead,BufNewFile *.tpl set filetype=smarty
+
 " set the leader key to the comma
 let mapleader=','
 

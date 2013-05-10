@@ -10,7 +10,12 @@ set guioptions-=r
 set guicursor=a:blinkon1000-blinkoff1000
 
 noremap <D-r> :CommandTFlush<CR>
-"inoremap <D-CR> :call InsertAndGoToNewLine()<CR>
+noremap <D-D> yy p :startinsert<CR>
+
+inoremap <D-D> <Esc>yy p :startinsert<CR>
+inoremap <D-CR> <Esc>o
+
+vnoremap <C-W> <Esc>:call WrapSelection()<CR>
 
 if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
