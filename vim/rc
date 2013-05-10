@@ -18,6 +18,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/syntastic'
+Bundle 'lunaru/vim-less'
 
 " snipmate dependencies
 Bundle 'MarcWeber/vim-addon-mw-utils'
