@@ -9,7 +9,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " bundles
-" Bundle 'scrooloose/nerdtree'
 Bundle 'gagoar/StripWhiteSpaces'
 Bundle 'wincent/Command-T'
 Bundle 'Lokaltog/vim-easymotion'
@@ -19,6 +18,9 @@ Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/syntastic'
 Bundle 'lunaru/vim-less'
+Bundle 'xolox/vim-session'
+Bundle 'godlygeek/tabular'
+Bundle 'nelstrom/vim-visual-star-search'
 
 " snipmate dependencies
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -39,8 +41,12 @@ map <Leader>3 :call RunLastSpec()<CR>
 " how I prefer my tabs/spaces
 set ts=2 sts=2 sw=2 expandtab
 
+" autosave/load sessions
+let g:session_autosave = 'yes'
+let g:session_autoload = 'yes'
+
 " use Smarty
-au BufRead,BufNewFile *.tpl set filetype=smarty
+au BufRead,BufNewFile *.tpl set filetype=smarty.html
 
 " set the leader key to the comma
 let mapleader=','
@@ -69,7 +75,12 @@ map <leader>e :edit %%
 map <leader>v :view %%
 
 " auto bracket insertion
-inoremap { {<CR><BS>}<Esc>ko
+inoremap { {}<Esc>i
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+
+" tabularize
+nmap <leader><TAB> :Tab<CR>
 
 " a visual reminder of an 80-character line
 if exists('+colorcolumn')
