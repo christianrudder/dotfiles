@@ -106,7 +106,7 @@ set ignorecase
 set smartcase
 set scrolloff=5
 set backspace=indent,eol,start " backspace over everything
-set backupdir=~/tmp
+set directory=~/tmp
 set t_Co=256
 
 " mimic TextMate's invisible characters
