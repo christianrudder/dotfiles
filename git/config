@@ -35,7 +35,7 @@
   status = auto
 
 [core]
-  editor = subl -w
+  editor = vim
   excludesfile = /Volumes/home/adam/.gitignore
 
 [push]
