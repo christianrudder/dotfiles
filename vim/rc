@@ -21,6 +21,8 @@ Bundle 'lunaru/vim-less'
 Bundle 'xolox/vim-session'
 Bundle 'godlygeek/tabular'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'mileszs/ack.vim'
+Bundle 'nono/vim-handlebars'
 
 " snipmate dependencies
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -74,10 +76,57 @@ cnoremap %% <c-r>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
 
-" auto bracket insertion
-inoremap { {}<Esc>i
+" auto bracket and quotation insertion
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
+inoremap { {}<Esc>i
+autocmd Syntax html,vim inoremap < <lt>><Esc>i| inoremap > <c-r>=ClosePair('>')<CR>
+inoremap ) <c-r>=ClosePair(')')<CR>
+inoremap ] <c-r>=ClosePair(']')<CR>
+inoremap } <c-r>=CloseBracket()<CR>
+inoremap " <c-r>=QuoteDelim('"')<CR>
+inoremap ' <c-r>=QuoteDelim("'")<CR>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 " tabularize
 nmap <leader><TAB> :Tab<CR>
