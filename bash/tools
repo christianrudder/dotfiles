@@ -10,7 +10,7 @@ fi
 
 # django bash completion
 if [ -f $HOME/src/django-trunk/extras/django_bash_completion ]; then
-  . "$HOME/src/django-trunk/extras/django_bash_completion"
+  . $HOME/src/django/extras/django_bash_completion
 fi
 
 # z script
