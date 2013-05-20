@@ -2,3 +2,6 @@
 --color
 --follow
 --group
+--ignore-dir=.meteor
+--ignore-dir=.sass-cache
+--ignore-dir=templates_c
