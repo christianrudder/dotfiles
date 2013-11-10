@@ -24,6 +24,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'mileszs/ack.vim'
 Bundle 'nono/vim-handlebars'
+Bundle 'kchmck/vim-coffee-script'
 
 " snipmate dependencies
 Bundle 'MarcWeber/vim-addon-mw-utils'

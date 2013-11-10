@@ -1,9 +1,13 @@
-export EDITOR=vim
+export EDITOR=subl
 export GEMEDITOR=subl
 export LC_CTYPE=en_US.UTF-8
 export CLICOLOR=YES
-# export GREP_OPTIONS="--color"
-export TERM="xterm-color"
+
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+  export TERM="xterm-256color"
+else
+  export TERM="xterm-color"
+fi
 
 export PGDATA="/usr/local/var/postgres"
 export PYTHON="/usr/local/bin/python"
@@ -17,11 +21,15 @@ export RBENV_ROOT="/usr/local/var/rbenv"
 # before /usr/bin
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 
-# npm bin
+# node
 export PATH="/usr/local/share/npm/bin:$PATH"
+export PATH="$HOME/.ndenv/bin:$PATH"
+
+# heroku
+export PATH="/usr/local/heroku/bin:$PATH"
 
 # Additional brew paths
-export PATH="$PATH:/usr/local/Cellar/python/2.7.1/bin:/usr/local/share/python"
+export PATH="$PATH:$(brew --prefix josegonzalez/php/php55)/bin"
 
 # gnu utils
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"

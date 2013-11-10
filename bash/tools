@@ -21,8 +21,10 @@ fi
 # rbenv completion
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-# Node Version Manager
-if [ -f $HOME/nvm/nvm.sh ]; then
-  . $HOME/nvm/nvm.sh
-  . $HOME/nvm/bash_completion
+# ndenv completion
+if which ndenv > /dev/null; then eval "$(ndenv init -)"; fi
+
+# meteorite completion
+if [ -f /usr/local/share/npm/lib/node_modules/meteorite/completions/mrt.bash ]; then
+  . /usr/local/share/npm/lib/node_modules/meteorite/completions/mrt.bash
 fi

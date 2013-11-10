@@ -2,8 +2,3 @@
 . ~/.dotfiles/bash/env
 . ~/.dotfiles/bash/aliases
 . ~/.dotfiles/bash/tools
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-[[ -s "$HOME/nvm/nvm.sh" ]] && source "$HOME/nvm/nvm.sh"
